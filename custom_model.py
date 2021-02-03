@@ -4,26 +4,24 @@ from keras.models import Sequential
 from keras.layers import Conv3D, BatchNormalization, Flatten, Dropout, Dense
 
 def createModel():
-    input_shape=(1, 22, 59, 114)
+    input_shape=(1, 22, 6726)
     model = Sequential()
-    #C1
-    model.add(Conv3D(16, (22, 5, 5), strides=(1, 2, 2), padding='valid',activation='relu',data_format= "channels_first", input_shape=input_shape))
-    model.add(keras.layers.MaxPooling3D(pool_size=(1, 2, 2),data_format= "channels_first",  padding='same'))
+    
+    #D1
+    model.add(Dense(16, activation='relu', input_shape=input_shape))
     model.add(BatchNormalization())
     
-    #C2
-    model.add(Conv3D(32, (1, 3, 3), strides=(1, 1,1), padding='valid',data_format= "channels_first",  activation='relu'))#incertezza se togliere padding
-    model.add(keras.layers.MaxPooling3D(pool_size=(1,2, 2),data_format= "channels_first", ))
+    #D2
+    model.add(Dense(32, activation='relu'))
     model.add(BatchNormalization())
     
-    #C3
-    model.add(Conv3D(64, (1,3, 3), strides=(1, 1,1), padding='valid',data_format= "channels_first",  activation='relu'))#incertezza se togliere padding
-    model.add(keras.layers.MaxPooling3D(pool_size=(1,2, 2),data_format= "channels_first", ))
+    #D3
+    model.add(Dense(64, ctivation='relu'))#incertezza se togliere padding
     model.add(BatchNormalization())
     
-    model.add(Flatten())
-    model.add(Dropout(0.5))
-    model.add(Dense(256, activation='sigmoid'))
+    #model.add(Flatten())
+    #model.add(Dropout(0.5))
+    #model.add(Dense(256, activation='sigmoid'))
     model.add(Dropout(0.5))
     model.add(Dense(2, activation='softmax'))
     

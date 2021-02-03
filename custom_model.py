@@ -16,7 +16,7 @@ def createModel():
     model.add(BatchNormalization())
     
     #D3
-    model.add(Dense(64, ctivation='relu'))#incertezza se togliere padding
+    model.add(Dense(64, activation='relu'))#incertezza se togliere padding
     model.add(BatchNormalization())
     
     #model.add(Flatten())

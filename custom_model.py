@@ -4,7 +4,7 @@ from keras.models import Sequential
 from keras.layers import Conv3D, BatchNormalization, Flatten, Dropout, Dense
 
 def createModel():
-    input_shape=(1, 22, 6726)
+    input_shape=(22, 6726)
     model = Sequential()
     #model.add(Flatten(data_format='channels_first', input_shape=input_shape))
     #D1

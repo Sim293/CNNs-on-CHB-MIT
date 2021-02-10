@@ -146,12 +146,14 @@ def generate_arrays_for_training(indexPat, paths, start=0, end=100):
         for i in range(from_, int(to_)):
             f=paths[i]
             x = np.load(PathSpectogramFolder+f)
-            x=np.array([x])
-            x=x.swapaxes(0,1)
+            #x=np.array([x])
+            #x=x.swapaxes(0,1)
             if('P' in f):
                 y = np.repeat([[0,1]],x.shape[0], axis=0)
             else:
                 y =np.repeat([[1,0]],x.shape[0], axis=0)
+            #moltiplicare i valori x255
+            #reshape            
             yield(x,y)
             
 def generate_arrays_for_predict(indexPat, paths, start=0, end=100):
@@ -161,8 +163,10 @@ def generate_arrays_for_predict(indexPat, paths, start=0, end=100):
         for i in range(from_, int(to_)):
             f=paths[i]
             x = np.load(PathSpectogramFolder+f)
-            x=np.array([x])
-            x=x.swapaxes(0,1)
+            #x=np.array([x])
+            #x=x.swapaxes(0,1)
+            #moltiplicare i valori x255
+            #reshape
             yield(x)
 
 class EarlyStoppingByLossVal(keras.callbacks.Callback):

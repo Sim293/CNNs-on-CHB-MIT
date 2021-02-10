@@ -4,19 +4,19 @@ from keras.models import Sequential
 from keras.layers import Conv3D, BatchNormalization, Flatten, Dropout, Dense
 
 def createModel():
-    input_shape=(1, 22, 59, 114)
+    input_shape=(1, 22, 6726)
     model = Sequential()
     model.add(Flatten(data_format='channels_first', input_shape=input_shape))
     #D1
-    model.add(Dense(16, activation='relu'))
+    model.add(Dense(6726, activation='relu'))
     model.add(BatchNormalization())
     
     #D2
-    model.add(Dense(32, activation='relu'))
+    model.add(Dense(13452, activation='relu'))
     model.add(BatchNormalization())
     
     #D3
-    model.add(Dense(64, activation='relu'))#incertezza se togliere padding
+    model.add(Dense(13452, activation='relu'))#incertezza se togliere padding
     model.add(BatchNormalization())
     
     #model.add(Flatten())

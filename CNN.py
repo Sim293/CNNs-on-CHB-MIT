@@ -154,7 +154,7 @@ def generate_arrays_for_training(indexPat, paths, start=0, end=100):
                 y =np.repeat([[1,0]],x.shape[0], axis=0)
             #moltiplicare i valori x255
             #reshape            
-            yield(x,y)
+            yield((x*255).stype('uint8').reshape(-1,22,6726),y)
             
 def generate_arrays_for_predict(indexPat, paths, start=0, end=100):
     while True:
@@ -167,7 +167,7 @@ def generate_arrays_for_predict(indexPat, paths, start=0, end=100):
             #x=x.swapaxes(0,1)
             #moltiplicare i valori x255
             #reshape
-            yield(x)
+            yield((x*255).stype('uint8').reshape(-1,22,6726))
 
 class EarlyStoppingByLossVal(keras.callbacks.Callback):
     def __init__(self, monitor='val_loss', value=0.00001, verbose=0, lower=True):

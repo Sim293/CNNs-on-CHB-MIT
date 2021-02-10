@@ -23,9 +23,9 @@ import math
 #model = load_model('my_model.h5')
 
 PathSpectogramFolder='gdrive/MyDrive/CNNs-on-CHB-MIT/spectrograms'
-OutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/grayscale/results.txt'
+OutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/results.txt'
 WeightsOutputPath=''
-OutputPathModels='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/grayscale/model'
+OutputPathModels='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/model'
 interictalSpectograms=[]
 preictalSpectograms=[]  #This array contains syntetic data, it's created to have a balance dataset and it's used for training
 preictalRealSpectograms=[]  #This array containt the real preictal data, it's used for testing

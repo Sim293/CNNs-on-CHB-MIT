@@ -6,9 +6,9 @@ from keras.layers import Conv3D, BatchNormalization, Flatten, Dropout, Dense
 def createModel():
     input_shape=(1, 22, 6726)
     model = Sequential()
-    model.add(Flatten(data_format='channels_first', input_shape=input_shape))
+    #model.add(Flatten(data_format='channels_first', input_shape=input_shape))
     #D1
-    model.add(Dense(6726, activation='relu'))
+    model.add(Dense(6726, activation='relu', input_shape=input_shape))
     model.add(BatchNormalization())
     
     #D2

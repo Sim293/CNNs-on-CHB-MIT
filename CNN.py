@@ -22,10 +22,10 @@ import math
 # Returns a compiled model identical to the saved one
 #model = load_model('my_model.h5')
 
-PathSpectogramFolder=''
-OutputPath=''
+PathSpectogramFolder='gdrive/MyDrive/CNNs-on-CHB-MIT/spectrograms'
+OutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/grayscale/results.txt'
 WeightsOutputPath=''
-OutputPathModels=''
+OutputPathModels='gdrive/MyDrive/CNNs-on-CHB-MIT/results/nucci/grayscale/model'
 interictalSpectograms=[]
 preictalSpectograms=[]  #This array contains syntetic data, it's created to have a balance dataset and it's used for training
 preictalRealSpectograms=[]  #This array containt the real preictal data, it's used for testing

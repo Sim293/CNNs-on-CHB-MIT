@@ -225,11 +225,11 @@ def main():
                                 steps_per_epoch=int((len(filesPath)-int(len(filesPath)/100*25))),#*25), 
                                 validation_steps=int((len(filesPath)-int(len(filesPath)/100*75))),#*75),
                                 verbose=1, #progress bar
-                                epochs=300, max_queue_size=2, shuffle=True, callbacks=[earlystop,weights_callback])# 100 epochs è meglio #aggiungere criterio di stop in base accuratezza
+                                epochs=300, max_queue_size=2, shuffle=True, callbacks=[earlystop])# 100 epochs è meglio #aggiungere criterio di stop in base accuratezza
             print('Training end')
             
             # Save model history
-            with open(f'{finalWeightsOutputPath}_hist.pkl','wb') as h:
+            with open(f'{OutputPathModels}_hist.pkl','wb') as h:
                 pickle.dump(history.history,h)
 
             print('Testing start')

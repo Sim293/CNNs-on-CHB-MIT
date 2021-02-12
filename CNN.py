@@ -146,15 +146,15 @@ def generate_arrays_for_training(indexPat, paths, start=0, end=100):
         for i in range(from_, int(to_)):
             f=paths[i]
             x = np.load(PathSpectogramFolder+f)
-            #x=np.array([x])
-            #x=x.swapaxes(0,1)
+            x=np.array([x])
+            x=x.swapaxes(0,1)
             if('P' in f):
                 y = np.repeat([[0,1]],x.shape[0], axis=0)
             else:
                 y =np.repeat([[1,0]],x.shape[0], axis=0)
             #moltiplicare i valori x255
             #reshape            
-            yield((x*255).astype('uint8').reshape(-1,22,6726),y)
+            yield(x.squeeze.reshape(-1,22,6726),y)
             
 def generate_arrays_for_predict(indexPat, paths, start=0, end=100):
     while True:
@@ -163,11 +163,11 @@ def generate_arrays_for_predict(indexPat, paths, start=0, end=100):
         for i in range(from_, int(to_)):
             f=paths[i]
             x = np.load(PathSpectogramFolder+f)
-            #x=np.array([x])
-            #x=x.swapaxes(0,1)
+            x=np.array([x])
+            x=x.swapaxes(0,1)
             #moltiplicare i valori x255
             #reshape
-            yield((x*255).astype('uint8').reshape(-1,22,6726))
+            yield(x.squeeze.reshape(-1,22,6726))
 
 class EarlyStoppingByLossVal(keras.callbacks.Callback):
     def __init__(self, monitor='val_loss', value=0.00001, verbose=0, lower=True):
@@ -196,7 +196,7 @@ def main():
         os.makedirs(OutputPathModels)
     loadParametersFromFile("PARAMETERS_CNN.txt")
     #callback=EarlyStopping(monitor='val_acc', min_delta=0, patience=0, verbose=0, mode='auto', baseline=None)
-    earlystop=EarlyStoppingByLossVal(monitor='val_accuracy', value=0.975, verbose=1, lower=False)
+    earlystop=EarlyStoppingByLossVal(monitor='val_acc', value=0.975, verbose=1, lower=False)
     print("Parameters loaded")
     
     for indexPat in range(0, len(patients)):

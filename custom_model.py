@@ -19,7 +19,7 @@ def createModel():
     model.add(Dense(13452, activation='relu'))#incertezza se togliere padding
     model.add(BatchNormalization())
     
-    #model.add(Flatten())
+    model.add(Flatten())
     #model.add(Dropout(0.5))
     #model.add(Dense(256, activation='sigmoid'))
     model.add(Dropout(0.5))

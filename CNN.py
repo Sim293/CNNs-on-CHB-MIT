@@ -196,7 +196,7 @@ def main():
         os.makedirs(OutputPathModels)
     loadParametersFromFile("PARAMETERS_CNN.txt")
     #callback=EarlyStopping(monitor='val_acc', min_delta=0, patience=0, verbose=0, mode='auto', baseline=None)
-    earlystop=EarlyStoppingByLossVal(monitor='val_acc', value=0.975, verbose=1, lower=False)
+    earlystop=EarlyStoppingByLossVal(monitor='val_accuracy', value=0.975, verbose=1, lower=False)
     print("Parameters loaded")
     
     for indexPat in range(0, len(patients)):

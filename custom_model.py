@@ -8,15 +8,15 @@ def createModel():
     model = Sequential()
     #model.add(Flatten(data_format='channels_first', input_shape=input_shape))
     #D1
-    model.add(Dense(6726, activation='relu', input_shape=input_shape))
+    model.add(Dense(13452, activation='relu', input_shape=input_shape))
     model.add(BatchNormalization())
     
     #D2
-    model.add(Dense(13452, activation='relu'))
+    model.add(Dense(6726, activation='relu'))
     model.add(BatchNormalization())
     
     #D3
-    model.add(Dense(13452, activation='relu'))#incertezza se togliere padding
+    model.add(Dense(3363, activation='relu'))#incertezza se togliere padding
     model.add(BatchNormalization())
     
     model.add(Flatten())

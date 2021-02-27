@@ -11,12 +11,13 @@ def createModel():
     model.add(Dense(13452, activation='relu', input_shape=input_shape))
     model.add(BatchNormalization())
     
+    model.add(Dropout(0.5))
     #D2
-    model.add(Dense(6726, activation='relu'))
+    model.add(Dense(3363, activation='relu'))
     model.add(BatchNormalization())
     
     #D3
-    model.add(Dense(3363, activation='relu'))#incertezza se togliere padding
+    model.add(Dense(841, activation='relu'))#incertezza se togliere padding
     model.add(BatchNormalization())
     
     model.add(Flatten())

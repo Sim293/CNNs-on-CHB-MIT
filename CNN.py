@@ -30,7 +30,7 @@ parser.add_argument('--resume',action='store_true',default=False)
 parser.add_argument('--save-weights',action='store_true',default=False)
 args = parser.parse_args()
 
-PathSpectogramFolder=''
+PathSpectogramFolder='gdrive/MyDrive/CNNs-on-CHB-MIT/spectrograms'
 OutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/results.txt'
 WeightsOutputPath=''
 OutputPathModels='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/model/'

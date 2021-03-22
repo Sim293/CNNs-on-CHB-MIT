@@ -1,7 +1,7 @@
 from tensorflow import keras
-import keras.layers
-from keras.models import Sequential
-from keras.layers import Conv3D, BatchNormalization, Flatten, Dropout, Dense
+import tensorflow.keras.layers as layers
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv3D, BatchNormalization, Flatten, Dropout, Dense
 
 def createModel():
     input_shape=(22, 6726)

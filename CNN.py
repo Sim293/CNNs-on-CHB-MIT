@@ -32,7 +32,7 @@ args = parser.parse_args()
 
 PathSpectogramFolder='gdrive/MyDrive/CNNs-on-CHB-MIT/spectrograms'
 OutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/results.txt'
-WeightsOutputPath=''
+WeightsOutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/weights/dominici/'
 OutputPathModels='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/model/'
 interictalSpectograms=[]
 preictalSpectograms=[]  #This array contains syntetic data, it's created to have a balance dataset and it's used for training
@@ -202,7 +202,7 @@ def main():
     #callback=EarlyStopping(monitor='val_acc', min_delta=0, patience=0, verbose=0, mode='auto', baseline=None)
 
     # custom early stop is incompatible with keras-buoy, but built-in early stop does not work for this project, falling back to custom early stop with val_acc
-    earlystop=EarlyStoppingByLossVal(monitor='val_accuracy', value=0.975, verbose=1, lower=False)
+    earlystop=EarlyStoppingByLossVal(monitor='val_acc', value=0.975, verbose=1, lower=False)
     
     #earlystop = EarlyStopping(monitor='val_acc',min_delta=0,baseline=0.975,restore_best_weights=False,patience=0,mode='max',verbose=1)
         

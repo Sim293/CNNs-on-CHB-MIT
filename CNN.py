@@ -32,7 +32,7 @@ args = parser.parse_args()
 
 PathSpectogramFolder='gdrive/MyDrive/CNNs-on-CHB-MIT/spectrograms'
 OutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/results.txt'
-WeightsOutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/weights/dominici/'
+WeightsOutputPath='gdrive/MyDrive/CNNs-on-CHB-MIT/weights/dominici'
 OutputPathModels='gdrive/MyDrive/CNNs-on-CHB-MIT/results/dominici/model/'
 interictalSpectograms=[]
 preictalSpectograms=[]  #This array contains syntetic data, it's created to have a balance dataset and it's used for training

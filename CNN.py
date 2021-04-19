@@ -246,7 +246,7 @@ def main():
         loadSpectogramData(indexPat) 
         print('Spectograms data loaded')
         filesPath,groups=getFilesPathWithGroup(indexPat,shuffles=True)
-        logo = LeaveOneGroupOut()
+        #logo = LeaveOneGroupOut()
         
         result='Patient '+patients[indexPat]+'\n'     
         result='Out Seizure, True Positive, False Positive, False negative, Second of Inter in Test, Sensitivity, FPR \n'

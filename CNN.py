@@ -292,7 +292,7 @@ def main():
             
 
             # Creates a HDF5 file 
-            model.save(OutputPathModels+"ModelPat"+patients[indexPat]+"/"+'ModelOutSeizure'+str(i+1)+'.h5')
+            model.save(OutputPathModels+"ModelPat"+patients[indexPat]+"/"+'ModelOutPatient'+str(indexPat+1)+'.h5')
             print("Model saved")
             
             #to plot the model

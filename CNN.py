@@ -146,6 +146,16 @@ def getFilesPathWithoutSeizure(indexSeizure, indexPat):
     shuffle(filesPath)
     return filesPath
 
+def getFilesPathWithGroup(indexPat, shuffles=False): #Per prendere tutte le seizures
+    filesPath=[]
+    groups=[]
+    for i in range(0, nSeizure):
+        filesPath.extend(interictalSpectograms[i])
+        filesPath.extend(preictalSpectograms[i])
+        groups.extend([i for _ in range(len(filesPath))])
+    if shuffles:
+        shuffle(filesPath)
+    return filesPath,groups
 
 def generate_arrays_for_training(indexPat, paths, start=0, end=100):
     while True:
@@ -235,10 +245,12 @@ def main():
         
         loadSpectogramData(indexPat) 
         print('Spectograms data loaded')
+        filesPath,groups=getFilesPathWithGroup(indexPat,shuffles=True)
+        logo = LeaveOneGroupOut()
         
         result='Patient '+patients[indexPat]+'\n'     
         result='Out Seizure, True Positive, False Positive, False negative, Second of Inter in Test, Sensitivity, FPR \n'
-        for i in range(indi, nSeizure):
+        for i in range(0, 1):
             print('SEIZURE OUT: '+str(i+1))
             with open(f'{OutputPathModels}/resume_indices.txt','w') as resf:
               resf.write(f'{indexPat}.{i}')

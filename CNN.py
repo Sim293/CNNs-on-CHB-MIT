@@ -292,8 +292,10 @@ def main():
             
 
             # Creates a HDF5 file 
-            model.save(OutputPathModels+"ModelPat"+patients[indexPat]+"/"+'ModelOutPatient'+str(indexPat+1)+'.h5')
-            print("Model saved")
+            # model.save(OutputPathModels+"ModelPat"+patients[indexPat]+"/"+'ModelOutPatient'+str(indexPat+1)+'.h5')
+            # print("Model saved")
+            model.save(OutputPathModels+"ModelPat"+patients[indexPat]+"/"+'ModelOutPatient'+str(indexPat+1), save_format="tf")
+            print("tf model saved")
             
             #to plot the model
             #plot_model(model, to_file="CNNModel", show_shapes=True, show_layer_names=True)
